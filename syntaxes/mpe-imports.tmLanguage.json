@@ -1,0 +1,36 @@
+{
+  "scopeName": "mpe.imports",
+  "injectionSelector": "L:text.html.markdown",
+  "patterns": [
+    {
+      "name": "meta.directive.mpe.import.line",
+      "begin": "^(\\s*)(@import)\\s+",
+      "beginCaptures": {
+        "2": { "name": "keyword.control.import" }
+      },
+      "end": "$",
+      "patterns": [
+        { "name": "string.quoted.double", "match": "\"[^\"]+\"" },
+        { "name": "string.quoted.single", "match": "'[^']+'" },
+        { "name": "string.unquoted.path", "match": "[^\\s\\{]+" },
+        {
+          "name": "meta.options.mpe",
+          "begin": "\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.braces.begin" } },
+          "end": "\\}",
+          "endCaptures": { "0": { "name": "punctuation.section.braces.end" } },
+          "patterns": [
+            { "name": "entity.other.attribute-name", "match": "\\b([A-Za-z_][\\w-]*)(?==)" },
+            { "name": "keyword.operator.assignment", "match": "=" },
+            { "name": "string.quoted.double", "match": "\"[^\"]*\"" },
+            { "name": "string.quoted.single", "match": "'[^']*'" },
+            { "name": "constant.numeric", "match": "-?\\d+(?:\\.\\d+)?" },
+            { "name": "constant.language.boolean", "match": "\\b(true|false)\\b" },
+            { "name": "punctuation.separator.comma", "match": "," },
+            { "name": "punctuation.whitespace", "match": "\\s+", "captures": { "0": { "name": "text.whitespace" } } }
+          ]
+        }
+      ]
+    }
+  ]
+}

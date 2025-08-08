@@ -1,0 +1,30 @@
+{
+  "name": "mpe-import-highlighting",
+  "displayName": "MPE Import Highlighting",
+  "description": "Syntax highlighting for @import (Markdown Preview Enhanced file imports) inside Markdown.",
+  "private": false,
+  "repository": "git@github.com:phoenixweiss/mpe-import-highlighting.git",
+  "version": "0.0.1",
+  "publisher": "phoenixweiss",
+  "license": "MIT",
+  "engines": { "vscode": "^1.103.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "mpe.imports",
+        "path": "./syntaxes/mpe-imports.tmLanguage.json",
+        "injectTo": ["text.html.markdown"]
+      }
+    ]
+  },
+  "devDependencies": {},
+  "keywords": [
+    "markdown",
+    "markdown preview enhanced",
+    "mpe",
+    "syntax highlighting",
+    "textmate",
+    "imports"
+  ]
+}
